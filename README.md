@@ -5,7 +5,7 @@ Minority Programmers Association COVID-19 Hackathon via James Madison University
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
 
 ## Authors
-* [Austin Wong Parker](https://github.com/AustinWongParker/) (maintainer)
+* [Austin Wong-Parker](https://github.com/AustinWongParker/) (maintainer)
 * [Nadya Postolaki](https://github.com/ninjanadya/)
 * [Jessica Peterson](https://github.com/jpetersen2/)
 * [Chris Chuhn](https://github.com/cchunh20/)
