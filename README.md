@@ -2,7 +2,7 @@
 Minority Programmers Association COVID-19 Hackathon via James Madison University
 
 ## Dependancies
-* [Beautiful Soup] (https://www.crummy.com/software/BeautifulSoup/)
+* [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
 
 ## Authors
 * [Austin Wong Parker](https://github.com/AustinWongParker/) (maintainer)
