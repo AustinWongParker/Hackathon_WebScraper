@@ -1,4 +1,4 @@
-# MPA Hackathon WebScrapper
+# Hackathon WebScrapper
 MPA COVID-19 Hackathon 
 
 ## Dependencies
