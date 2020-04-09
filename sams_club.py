@@ -19,8 +19,11 @@ print(price)
     # print(price) # Just to see it on the screen / cmd for testing purposes
     # return price
 
-urls = []
-for spans in soup.find_all('span', {'class': 'Price-group'}).title:
-    urls.append(spans)
+costs = []
+# for spans in soup.find_all('span', {'class': 'Price-group'}):
+#     costs.append(spans.title)
 
-print(urls)
+for divss in soup.find_all('div', {'class': 'sc-channel-price'}):
+     spans = divss.find('span', {'class': 'visuallyhidden'})
+     costs.append(spans.text)
+print(costs)
