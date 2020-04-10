@@ -20,10 +20,8 @@ print(price)
     # return price
 
 costs = []
-# for spans in soup.find_all('span', {'class': 'Price-group'}):
-#     costs.append(spans.title)
-
 for divss in soup.find_all('div', {'class': 'sc-channel-price'}):
      spans = divss.find('span', {'class': 'visuallyhidden'})
      costs.append(spans.text)
 print(costs)
+

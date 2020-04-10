@@ -1,5 +1,5 @@
-# MPA Hackathon WebScrapper
-Minority Programmers Association COVID-19 Hackathon via James Madison University
+# Hackathon WebScrapper
+MPA COVID-19 Hackathon 
 
 ## Dependencies
 * [Python](https://www.python.org/)
