@@ -17,6 +17,13 @@ for divvs in soup.find_all('div', {'class': 'cat-price'}):
 	spans = divvs.find('span', {'class': 'cat-price-number'})
 	prices.append(spans.text)
 
+
+#TO-DO: get rid of random characters in prices array.
+for str in prices:
+	newStr = str.replace('\n','').replace('each','').replace(' ','')
+	print(newStr)
+
+
+
+
 print(prices)
-
-

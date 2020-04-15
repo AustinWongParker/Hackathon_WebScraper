@@ -43,6 +43,10 @@ def grab_image():
 
 def grab_name():
     names = []
+    for dives in soup.find_all('div', {'class': 'product-title-link line-clamp line-clamp-2'}):
+        spanss = dives.find('span')
+        names.append(spanss.text)
+    print(names)
 
 ####using the functions
 print('----------------TP-------------------')
@@ -52,7 +56,7 @@ soup = BeautifulSoup(src, 'lxml')
 priceWithFulfillment()
 print('\n')
 grab_image()
-#grab_name()
+grab_name()
 
 
 print('----------------Hand Sanitizer-------------------')
