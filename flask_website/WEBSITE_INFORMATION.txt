@@ -1,0 +1,4 @@
+How to run website (windows):
+1. cd into directory
+2. set FLASK_APP=__init__.py
+3. flask run
