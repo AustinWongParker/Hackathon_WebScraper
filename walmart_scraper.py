@@ -24,8 +24,6 @@ def priceWithFulfillment(): # Parses prices for class=product-price-with-fulfill
     print(prices)
     return prices
 
-
-
 def grab_image():
     images = []
     for divys in soup.find_all('div', {'class': 'page-wrapper'}):
