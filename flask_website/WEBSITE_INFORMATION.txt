@@ -1,4 +1,15 @@
 How to run website (windows):
 1. cd into directory
 2. set FLASK_APP=__init__.py
+  *if on a mac, change set to export
 3. flask run
+
+Debug:
+  export FLASK_APP=__init__.py
+  export FLASK_ENV=development  **
+
+
+Dependencies
+0. Have python 3+ installed
+1. pip install flask
+3.
