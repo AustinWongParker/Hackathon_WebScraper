@@ -3,6 +3,7 @@
 
 from flask import Flask, render_template, redirect, url_for
 import sys
+import sams_funcs
 app = Flask(__name__) # app is an instance of the flask class.
 
 @app.route('/') # route decorator tells flask which URL to go through.
