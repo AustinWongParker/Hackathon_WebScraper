@@ -2,6 +2,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def getPrices():
     prices = []
 
@@ -24,7 +25,7 @@ def getImgs():
                 images.append(link2)
             if link2 is '':
                 images.append(link)
-            
+
     print(images)
 
 
@@ -62,4 +63,3 @@ soup = BeautifulSoup(src, 'lxml')
 getPrices()
 getImgs()
 getNames()
-
