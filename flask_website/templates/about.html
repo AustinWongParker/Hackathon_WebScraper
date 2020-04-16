@@ -2,14 +2,34 @@
 
 {% extends 'layout.html' %} <!-- Interhited from layout.html -->
 
+
 {% block sc %}
-<html>
-<h1>austin</h1>
-<h2>jess</h2>
-<h3>chris</h3>
-<h4>nadya</h4>
-<h5>mitchell</h5>
-</html>
+<center>
 
+  <!-- First Photo Grid-->
+    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+      <div class="w3-quarter">
+        <img src="/static/austin.png" alt="Austin" style="width:100%">
+        <h3>Austin Wong-Parker</h3>
+        <p>Senior at University of Minnesota - thinks mangos are the superior fruit.</p>
+      </div>
+      <div class="w3-quarter">
+        <img src="/static/jessica.jpeg" alt="Jessica" style="width:100%">
+        <h3>Jessica Petersen</h3>
+        <p>Senior at St. Olaf College</p>
+      </div>
+      <div class="w3-quarter">
+        <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
+        <h3>Cherries, interrupted</h3>
+        <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        <p>What else?</p>
+      </div>
+      <div class="w3-quarter">
+        <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
+        <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+        <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      </div>
+    </div>
 
+</center>
 {% endblock %}
