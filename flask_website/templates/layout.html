@@ -25,7 +25,7 @@ form {
     <div class="w3-bar w3-dark-grey w3-card w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hover-blue">Home</a>
-      <a href="projects" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">About</a>
+      <a href="about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">About</a>
       <form class="navbar-form navbar-left" action="/action_page.php">
         <div class="form-group w3-right-align" style="margin-right: 10px">
           <li>
@@ -39,20 +39,15 @@ form {
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1500px">
 
-<!-- Header -->
+{% block sc %}
+{% endblock %}
 
-<header class="w3-panel w3-center" style="padding:8px 16px">
-  <img src="/static/Sam's-Club-logo_0.jpg" alt="Sam's Club Logo" style="width:350px;height:280px;"></img>
-  <h1 class="w3-xlarge w3-opacity">Sams Club</h1>
 
-  <div class="w3-padding-32 w3-opacity">
-    <div class="w3-bar w3-border">
-      <a href="#" class="w3-bar-item w3-button">Toilet Paper</a>
-      <a href="#" class="w3-bar-item w3-button w3-light-grey">Soap</a>
-      <a href="#" class="w3-bar-item w3-button">Hand Sanitizer</a>
-    </div>
-  </div>
-</header>
+<!-- Blocks -->
+<center>
+{% block body %}    <!-- Blocks will substitute whatever the child html files want -->
+{% endblock %}      <!-- For example, anywhere theres a block body, this will be substituted into here -->
+</center>
 
 <!-- Photo Grid -->
 <div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
