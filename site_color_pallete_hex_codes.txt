@@ -1,0 +1,25 @@
+https://htmlcolors.com/palette-image/78/random-blue.png
+
+Colors labeled 1-5 respective to order in which they appear on the image
+
+1:	HTML/HEX	#335d9f
+	RGB		51, 93, 159
+
+2:	HTML/HEX	#7ea3d5
+	RGB		126, 163, 213
+
+3:	HTML/HEX	#b3d2f7
+	RGB		179, 210, 247
+
+4:	HTML/HEX	#98b9df
+	RGB		152, 185, 223
+
+5:	HTML/HEX	#93acd9
+	RGB		147, 172, 217
+
+
+If a darker blue is needed for the navigation bar and #1 is used for the site background, try:
+	HTML/HEX	#1c3864
+	RGB		28, 56, 100
+
+This is a color I picked out via photoshop and compared to the existing pallete.
