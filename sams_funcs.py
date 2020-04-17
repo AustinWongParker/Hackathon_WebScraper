@@ -1,58 +1,58 @@
-#the file for scraping sams club websites
 import requests
 from bs4 import BeautifulSoup
-
-
-def getPrices(soup):
-    prices = []
-
-    for divss in soup.find_all('div', {'class': 'sc-channel-price'}):
-        spans = divss.find('span', {'class': 'visuallyhidden'})
-        if spans is not None:
-            prices.append(spans.text)
-    print(prices)
-    return prices
-
-def getImgs(soup):
-    images = []
-    for divys in soup.find_all('div', {'class': 'sc-image-wrapper'}):
-        imgs = divys.find('img', {'class': 'sc-product-card-image'})
-        #finds the image source only if there is something there
-        if imgs is not None:
-            link = imgs["data-src"].split("data-src=")[-1]
-            link2 = imgs["src"].split("src=")[-1]
-            if link == '':
-                images.append(link2)
-            if link2 == '':
-                images.append(link)
-
-    print(images)
-
-
-def getNames(soup):
-    names = []
-    for dives in soup.find_all('div', {'class': 'sc-product-card-title'}):
-        spanss = dives.find('span')
-        names.append(spanss.text)
-    print(names)
 
 def getProducts(url):
     result = requests.get(url)
     src = result.content
     soup = BeautifulSoup(src, 'lxml')
-    getPrices(soup)
-    getImgs(soup)
-    getNames(soup)
+    baseURL = 'http://www.samsclub.com'
+
+    # Open a file for data output
+    file = open("output.csv","w")
+
+    # Get all of the product cards from the search results page
+    productCards = soup.find_all('div', {'class' :  lambda x: x and
+        x.startswith('sc-product-card sc-product-card-grid')})
+    
+    # Extract data from each of the product cards
+    for productCard in productCards:
+        
+        # Get the name of this product
+        productName = productCard.find('div', {'class' : 'sc-product-card-title'}).find('span').text
+        
+        # Get the link to this product
+        productLink = baseURL + productCard.find('a', {'class' : 'sc-product-card-pdp-link'})['href']
+        
+        # Get the price of this product
+        # If a price can't be found, it will be "Unavailable"
+        productPrice = 'Unavailable'
+        for divs in productCard.find_all('div', {'class': 'sc-channel-price'}):
+            spans = divs.find('span', {'class': 'visuallyhidden'})
+            if spans is not None:
+                productPrice = spans.text.replace('current price: ', '')
+        
+        # Get the image of this product
+        imageWrapper = productCard.find('img', {'class': 'sc-product-card-image'})
+        productImage = imageWrapper["src"].split("src=")[-1]
+        if productImage == '':
+            productImage = imageWrapper["data-src"].split("data-src=")[-1]
+
+        # Write this product's data to output.csv
+        # Commas need to be removed so there aren't 
+        #   extra columns created in the .csv file
+        file.write(removeCommas(productName) + "," +
+                    removeCommas(productLink) + "," +
+                    removeCommas(productPrice) + "," +
+                    removeCommas(productImage) + "\n")
+
+    # Close the output file
+    file.close()
 
 def searchForProducts(query):
     getProducts('http://www.samsclub.com/s/' + query.replace(' ', '%20'))
 
-# Testing
-print('----------------TP-------------------')
+def removeCommas(str):  
+    return str.replace(',', ' ')
+
+# Test by searching for "toilet paper"
 searchForProducts('toilet paper')
-
-print('----------------Hand Sanitizer-------------------')
-searchForProducts('hand sanitizer')
-
-print('----------------Soap-------------------')
-searchForProducts('soap')
