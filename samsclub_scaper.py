@@ -23,7 +23,7 @@ for divss in soup.find_all('div', {'class': 'sc-channel-price'}):
 print(prices)
 
 
-#####parce prices
+#####parse prices
 
 
 #####get images
