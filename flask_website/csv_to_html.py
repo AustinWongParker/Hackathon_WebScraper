@@ -3,7 +3,7 @@
 
 import sys
 import csv
-#import samsclub_scraper.py -- will need to uncomment this one and replace the above once we change the name.
+import samsclub_scraper.py 
 from prettytable import PrettyTable # python module. need to download. pip install PrettyTable
 sys.path.insert(1, 'C:/Users/wongp/Documents/Github/python_webscrapping/samsclub_scaper.py') # import samsclub_scaper.py
 
