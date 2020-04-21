@@ -26,6 +26,10 @@ def soap():
 def handsanitizer():
     return render_template('handsanitizer.html')
 
+@app.route('/walmart')
+def walhome():
+    return render_template('Walhome.html')
+
 
 if __name__ == "__main__":
     #app.run()
