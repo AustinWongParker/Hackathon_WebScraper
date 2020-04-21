@@ -12,12 +12,22 @@ csv_file = open('C:/Users/wongp/Documents/Github/python_webscrapping/flask_websi
 csv_file = csv_file.readlines() # creates an array of out the csv data
 line_1 = csv_file[0] # first element is line 1
 line_1 = line_1.split(',') # splits elements after each comma
-line_2 = csv_file[1] # second element is line 2
-line_1 = line_2.split(',') # splits elements after each comma
 
-print(csv_file)
+line_2 = csv_file[1] # second element is line 2
+line_2 = line_2.split(',') # splits elements after each comma
 
 '''
 line_3 = csv_file[2] # second element is line 3
+line_3 = line_2.split(',') # splits elements after each comma
+
 line_4 = csv_file[3] # second element is line 4
+line_4 = line_2.split(',') # splits elements after each comma
 '''
+
+table = PrettyTable([line_1[0], line_2[0]])
+for x in range(1, len(line_1)):
+    table.add_row([line_1[x], line_2[x]])
+
+html_code = table.get_html_string()
+html_file = open('C:/Users/wongp/Documents/Github/python_webscrapping/flask_website/table.html', 'w')
+html_file = html_file.write(html_code)
