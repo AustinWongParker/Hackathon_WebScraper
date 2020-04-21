@@ -42,6 +42,7 @@ def wal_handsanitizer():
     return render_template('wal_handsanitizer.html')
 # *** End: Walmart Routing *** #
 
+# About page routing
 @app.route('/about')
 def sc_about():
     return render_template('about.html')

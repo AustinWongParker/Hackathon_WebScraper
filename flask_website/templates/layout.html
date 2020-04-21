@@ -17,8 +17,6 @@ h1 {letter-spacing: 6px}
 form {
   padding-top: 8px;
 }
-
-
 </style>
 
 <!-- Start of Body -->
@@ -29,7 +27,7 @@ form {
   <div class="w3-bar w3-dark-grey w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hover-blue">Sam's Club</a>
-    <a href="wal_home" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">Walmart</a>
+    <a href="walmart" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">Walmart</a>
     <a href="about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">About</a>
     <form class="navbar-form navbar-left" action="/action_page.php">
       <div class="form-group w3-right-align" style="margin-right: 10px">
@@ -45,9 +43,13 @@ form {
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1500px max-height:1500px">
 
+<!-- Sam's Club Block -->
 {% block sc %}
 {% endblock %}
 
+<!-- Walmart's Block -->
+{% block wal %}
+{% endblock %}
 
 <!-- Blocks -->
 <center>

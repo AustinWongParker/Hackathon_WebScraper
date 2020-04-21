@@ -1,9 +1,26 @@
 <!-- -->
 
-{% extends 'layout.html' %} <!-- Interhited from layout.html -->
+{% extends 'layout.html' %} <!-- inherited from layout.html -->
 
+{% block sc %}
 
+<!-- Header -->
+<header class="w3-panel w3-center" style="padding:8px 16px">
+
+<!-- Sam's Club Logo and TP / SOAP / HS -->
+<img src="/static/Sams-Club-logo_0_1.png" alt="Sam's Club Logo" style="width:350px;height:280px;padding-top:35px"></img>
+<h1 class="w3-xlarge w3-opacity">Sams Club</h1>
+
+<div class="w3-padding-32 w3-opacity">
+  <div class="w3-bar w3-border">
+    <a href="sc_tp" class="w3-bar-item w3-button">Toilet Paper</a>
+    <a href="sc_soap" class="w3-bar-item w3-button w3-light-grey">Soap</a>
+    <a href="sc_handsanitizer" class="w3-bar-item w3-button">Hand Sanitizer</a>
+  </div>
+</div>
+</header>
+
+{% endblock %}
 
 {% block body %}
-
 {% endblock %}
