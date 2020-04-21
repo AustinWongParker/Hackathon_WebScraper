@@ -10,6 +10,14 @@ def getProducts(url):
     # Open a file for data output
     file = open("output.csv","w")
 
+    # Create strings to store scraped data
+    # In output.csv, each product is represented as a column
+    #   and each field is a row
+    nameLine = "Name,"
+    linkLine = "Link,"
+    priceLine = "Price,"
+    imageLine = "Image,"
+    
     # Get all of the product cards from the search results page
     productCards = soup.find_all('div', {'class' :  lambda x: x and
         x.startswith('sc-product-card sc-product-card-grid')})
@@ -37,13 +45,19 @@ def getProducts(url):
         if productImage == '':
             productImage = imageWrapper["data-src"].split("data-src=")[-1]
 
-        # Write this product's data to output.csv
+        # Append this products 
         # Commas need to be removed so there aren't
         #   extra columns created in the .csv file
-        file.write(removeCommas(productName) + "," +
-                    removeCommas(productLink) + "," +
-                    removeCommas(productPrice) + "," +
-                    removeCommas(productImage) + "\n")
+        nameLine += removeCommas(productName) + ","
+        linkLine += removeCommas(productLink) + ","
+        priceLine += removeCommas(productPrice) + ","
+        imageLine += removeCommas(productImage) + ","
+
+    # Write the products' data to output.csv
+    file.write(nameLine + "\n" +
+                linkLine + "\n" +
+                priceLine + "\n" +
+                imageLine + "\n")
 
     # Close the output file
     file.close()
@@ -53,6 +67,3 @@ def searchForProducts(query):
 
 def removeCommas(str):
     return str.replace(',', ' ')
-
-# Test by searching for "toilet paper"
-searchForProducts('toilet paper')
