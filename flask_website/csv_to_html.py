@@ -4,8 +4,7 @@ def convertFile(inputFileName,outputFileName):
     inFile = open(inputFileName,"r", encoding="utf8", errors='ignore')
     outFile = open(outputFileName,"w", encoding="utf8", errors='ignore')
 
-    # Link to the CSS stylesheet
-    outFile.write("<head>\n\t<style>\n\t\tth { font-size: xx-large;}\n\t</style>\n</head>\n")
+    outFile.write("<head>\n\t<style>\n\t\tth { font-size: x-large; padding-right: 115px}\n\t</style>\n</head>\n")
 
     outFile.write("<table>\n")
 
