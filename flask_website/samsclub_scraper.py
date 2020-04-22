@@ -49,3 +49,5 @@ def getProducts(url):
 
 def searchForProducts(query):
     getProducts('http://www.samsclub.com/s/' + query.replace(' ', '%20'))
+
+searchForProducts("Noah")
