@@ -38,4 +38,4 @@ def convertRow(row, itemTag):
 def convertItem(item, itemTag):
     return "<" + itemTag + ">" + item + "</" + itemTag + ">\n"
 
-convertFile("output.csv", "table.html")
+convertFile("output.csv", "templates/table.html")
