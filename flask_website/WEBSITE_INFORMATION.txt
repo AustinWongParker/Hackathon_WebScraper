@@ -1,3 +1,9 @@
+Website IP: 23.239.14.146
+Website URL: http://coronaessentials.info/
+
+Hosted on Linode
+Domain bought thru Google Domains
+
 How to run website (windows):
 1. cd into directory
 2. set FLASK_APP=__init__.py
@@ -9,13 +15,15 @@ Debug:
   export FLASK_ENV=development  **
 
 
-Dependencies
+Dependencies to run website on local machines
 0. Have python 3+ installed
 1. pip install flask
-3.
+2. pip install beautifulsoup4
+3. pip install requests
+4. sudo apt-get install python3-lxml
 
 
-Running the webscraper to display data on website:
+Running the webscraper to display data on website (FOR TESTING):
 1. Have flask run going (prob in debug mode to test)
 2. run samsclub_scraper.py once (This will scrap the site and put into csv)
 3. run csv_to_html.py once (This will take csv and make it into html)

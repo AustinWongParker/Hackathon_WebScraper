@@ -33,10 +33,12 @@ form {
     <a href="about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">About</a>
 
     <!-- Search bar (still in Navbar div tag)-->
-    <form class="navbar-form navbar-left" action="/searched_result">
+    <form class="navbar-form navbar-left" action="{{ url_for('searched_result') }}" method="post">
+
       <div class="form-group w3-right-align" style="margin-right: 10px">
         <li>
    <input type="text" class="form-control w3-right-align" placeholder="Search Sam's Club" name="searched_result" style="margin-left: 5px">
+   <input type="submit" value="Enter" style="width:60px;"/>
    </li>
     </div>
       </form>
