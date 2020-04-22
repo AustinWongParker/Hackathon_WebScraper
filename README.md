@@ -1,5 +1,5 @@
 # Hackathon WebScraper
-MPA COVID-19 Hackathon. This webscraper pulls information from large retail sites. Currently Sam's Club and Walmart. The website is accessible here: [CoronaEssentials](http://coronaessentials.info). If domain is not working, connect directly using its IP: [IP](http://23.239.14.146)
+MPA COVID-19 Hackathon. This webscraper pulls information from large retail sites. Currently Sam's Club and Walmart. The website is accessible here: [CoronaEssentials](http://coronaessentials.info). If domain is not working, connect directly using its [IP](http://23.239.14.146)
 
 ## Dependencies
 * [Python](https://www.python.org/)
