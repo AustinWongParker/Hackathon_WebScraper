@@ -40,35 +40,12 @@ def getProducts(url):
         if productImage == '':
             productImage = imageWrapper["data-src"].split("data-src=")[-1]
 
-<<<<<<< HEAD:flask_website/samsclub_scraper.py
-        # Append this products
-        # Commas need to be removed so there aren't
-        #   extra columns created in the .csv file
-        nameLine += removeCommas(productName) + ","
-        linkLine += removeCommas(productLink) + ","
-        priceLine += removeCommas(productPrice) + ","
-        imageLine += "<img src=\"" + productImage + "\">" + ","
-
-    # Write the products' data to output.csv
-    file.write(nameLine + "\n" +
-                linkLine + "\n" +
-                priceLine + "\n" +
-                imageLine + "\n")
-=======
         # Write this product's data to output.csv
         file.write("<a href=\"" + productLink + "\">" + productName.replace(";","") + "</a>;"
                     + productPrice + ";<img src=\"" + productImage + "\">\n")
->>>>>>> a73acd4f1d16d218b948f44a41c1fc45b00a03d3:flask_website/samsclub_scraper.py
 
     # Close the output file
     file.close()
 
 def searchForProducts(query):
-<<<<<<< HEAD:flask_website/samsclub_scraper.py
     getProducts('http://www.samsclub.com/s/' + query.replace(' ', '%20'))
-
-def removeCommas(str):
-    return str.replace(',', ' ')
-=======
-    getProducts('http://www.samsclub.com/s/' + query.replace(' ', '%20'))
->>>>>>> a73acd4f1d16d218b948f44a41c1fc45b00a03d3:flask_website/samsclub_scraper.py
