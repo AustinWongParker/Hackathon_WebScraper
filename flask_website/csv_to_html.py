@@ -4,6 +4,9 @@ def convertFile(inputFileName,outputFileName):
     inFile = open(inputFileName,"r", encoding="utf8", errors='ignore')
     outFile = open(outputFileName,"w", encoding="utf8", errors='ignore')
 
+    # Link to the CSS stylesheet
+    outFile.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n")
+
     outFile.write("<table>\n")
 
     # Make the table header
