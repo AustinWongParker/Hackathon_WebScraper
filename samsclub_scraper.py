@@ -14,7 +14,6 @@ def getProducts(url):
     # In output.csv, each product is represented as a column
     #   and each field is a row
     nameLine = "Name,"
-    linkLine = "Link,"
     priceLine = "Price,"
     imageLine = "Image,"
     
@@ -48,14 +47,12 @@ def getProducts(url):
         # Append this products 
         # Commas need to be removed so there aren't
         #   extra columns created in the .csv file
-        nameLine += removeCommas(productName) + ","
-        linkLine += removeCommas(productLink) + ","
+        nameLine += "<a href=\"" + productLink + "\">" + removeCommas(productName) + "</a>,"
         priceLine += removeCommas(productPrice) + ","
-        imageLine += removeCommas(productImage) + ","
+        imageLine += "<img src=\"" + productImage + "\">" + ","
 
     # Write the products' data to output.csv
     file.write(nameLine + "\n" +
-                linkLine + "\n" +
                 priceLine + "\n" +
                 imageLine + "\n")
 
@@ -67,3 +64,5 @@ def searchForProducts(query):
 
 def removeCommas(str):
     return str.replace(',', ' ')
+
+searchForProducts('toilet paper')
