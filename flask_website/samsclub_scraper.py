@@ -51,7 +51,7 @@ def getProducts(url):
         nameLine += removeCommas(productName) + ","
         linkLine += removeCommas(productLink) + ","
         priceLine += removeCommas(productPrice) + ","
-        imageLine += removeCommas(productImage) + ","
+        imageLine += "<img src=\"" + productImage + "\">" + ","
 
     # Write the products' data to output.csv
     file.write(nameLine + "\n" +
@@ -67,5 +67,3 @@ def searchForProducts(query):
 
 def removeCommas(str):
     return str.replace(',', ' ')
-
-searchForProducts("Toilet Paper")

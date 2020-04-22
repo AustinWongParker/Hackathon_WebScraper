@@ -3,9 +3,10 @@
 
 import sys
 import csv
-import samsclub_scraper.py 
+import os
 from prettytable import PrettyTable # python module. need to download. pip install PrettyTable
-sys.path.insert(1, 'C:/Users/wongp/Documents/Github/python_webscrapping/samsclub_scaper.py') # import samsclub_scaper.py
+sys.path.insert(1, 'C:/Users/wongp/Documents/Github/python_webscrapping/samsclub_scraper.py') # import samsclub_scraper.py
+
 
 # grab output.csv
 csv_file = open('C:/Users/wongp/Documents/Github/python_webscrapping/output.csv', 'r') # this file path will change depending on their own PC path(s)
@@ -31,10 +32,10 @@ for x in range(1, len(line_1)):
 
 # Table 1
 html_code1 = table1.get_html_string()
-html_file1 = open('C:/Users/wongp/Documents/Github/python_webscrapping/flask_website/table1.html', 'w')
+html_file1 = open('C:/Users/wongp/Documents/Github/python_webscrapping/flask_website/static/table1.html', 'w')
 html_file1 = html_file1.write(html_code1)
 
 # Table 2
 html_code2 = table2.get_html_string()
-html_file2 = open('C:/Users/wongp/Documents/Github/python_webscrapping/flask_website/table2.html', 'w')
+html_file2 = open('C:/Users/wongp/Documents/Github/python_webscrapping/flask_website/static/table2.html', 'w')
 html_file2 = html_file2.write(html_code2)
