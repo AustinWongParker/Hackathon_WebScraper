@@ -13,3 +13,10 @@ Dependencies
 0. Have python 3+ installed
 1. pip install flask
 3.
+
+
+Running the webscraper to display data on website:
+1. Have flask run going (prob in debug mode to test)
+2. run samsclub_scraper.py once (This will scrap the site and put into csv)
+3. run csv_to_html.py once (This will take csv and make it into html)
+4. Boom. Now the separate html pages in templates should render the csv-->html on their respective pages.

@@ -1,8 +1,8 @@
 def convertFile(inputFileName,outputFileName):
 
     # Open a file for input and a file for output
-    inFile = open(inputFileName,"r")
-    outFile = open(outputFileName,"w")
+    inFile = open(inputFileName,"r", encoding="utf8", errors='ignore')
+    outFile = open(outputFileName,"w", encoding="utf8", errors='ignore')
 
     outFile.write("<table>\n")
 
@@ -37,5 +37,3 @@ def convertRow(row, itemTag):
 
 def convertItem(item, itemTag):
     return "<" + itemTag + ">" + item + "</" + itemTag + ">\n"
-
-convertFile("output.csv", "templates/table.html")

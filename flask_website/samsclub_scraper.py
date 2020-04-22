@@ -47,7 +47,5 @@ def getProducts(url):
     # Close the output file
     file.close()
 
-def searchForProducts(query):
+def sc_searchForProducts(query):
     getProducts('http://www.samsclub.com/s/' + query.replace(' ', '%20'))
-
-searchForProducts("Noah")
