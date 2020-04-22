@@ -5,7 +5,7 @@ def convertFile(inputFileName,outputFileName):
     outFile = open(outputFileName,"w", encoding="utf8", errors='ignore')
 
     # Link to the CSS stylesheet
-    outFile.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n")
+    outFile.write("<head>\n\t<style>\n\t\tth { font-size: xx-large;}\n\t</style>\n</head>\n")
 
     outFile.write("<table>\n")
 
