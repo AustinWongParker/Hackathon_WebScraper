@@ -10,12 +10,8 @@ def getProducts(url):
     # Open a file for data output
     file = open("output.csv","w")
 
-    # Create strings to store scraped data
-    # In output.csv, each product is represented as a column
-    #   and each field is a row
-    nameLine = "Name,"
-    priceLine = "Price,"
-    imageLine = "Image,"
+    # Write the table headers
+    file.write("Product;Price;Image\n")
 
     # Get all of the product cards from the search results page
     productCards = soup.find_all('div', {'class' :  lambda x: x and
@@ -44,25 +40,12 @@ def getProducts(url):
         if productImage == '':
             productImage = imageWrapper["data-src"].split("data-src=")[-1]
 
-        # Append this products
-        # Commas need to be removed so there aren't
-        #   extra columns created in the .csv file
-        nameLine += "<a href=\"" + productLink + "\">" + removeCommas(productName) + "</a>,"
-        priceLine += removeCommas(productPrice) + ","
-        imageLine += "<img src=\"" + productImage + "\">" + ","
-
-    # Write the products' data to output.csv
-    file.write(nameLine + "\n" +
-                priceLine + "\n" +
-                imageLine + "\n")
+        # Write this product's data to output.csv
+        file.write("<a href=\"" + productLink + "\">" + productName.replace(";","") + "</a>;"
+                    + productPrice + ";<img src=\"" + productImage + "\">\n")
 
     # Close the output file
     file.close()
 
 def searchForProducts(query):
     getProducts('http://www.samsclub.com/s/' + query.replace(' ', '%20'))
-
-def removeCommas(str):
-    return str.replace(',', ' ')
-
-searchForProducts("Toilet Paper")
