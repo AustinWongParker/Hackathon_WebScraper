@@ -16,7 +16,7 @@ def getProducts(url):
     nameLine = "Name,"
     priceLine = "Price,"
     imageLine = "Image,"
-    
+
     # Get all of the product cards from the search results page
     productCards = soup.find_all('div', {'class' :  lambda x: x and
         x.startswith('sc-product-card sc-product-card-grid')})
@@ -44,7 +44,7 @@ def getProducts(url):
         if productImage == '':
             productImage = imageWrapper["data-src"].split("data-src=")[-1]
 
-        # Append this products 
+        # Append this products
         # Commas need to be removed so there aren't
         #   extra columns created in the .csv file
         nameLine += "<a href=\"" + productLink + "\">" + removeCommas(productName) + "</a>,"
@@ -65,4 +65,4 @@ def searchForProducts(query):
 def removeCommas(str):
     return str.replace(',', ' ')
 
-searchForProducts('toilet paper')
+searchForProducts("Toilet Paper")
