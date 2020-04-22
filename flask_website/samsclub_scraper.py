@@ -10,13 +10,8 @@ def getProducts(url):
     # Open a file for data output
     file = open("output.csv","w")
 
-    # Create strings to store scraped data
-    # In output.csv, each product is represented as a column
-    #   and each field is a row
-    nameLine = "Name,"
-    linkLine = "Link,"
-    priceLine = "Price,"
-    imageLine = "Image,"
+    # Write the table headers
+    file.write("Product;Price;Image\n")
 
     # Get all of the product cards from the search results page
     productCards = soup.find_all('div', {'class' :  lambda x: x and
@@ -45,6 +40,7 @@ def getProducts(url):
         if productImage == '':
             productImage = imageWrapper["data-src"].split("data-src=")[-1]
 
+<<<<<<< HEAD:flask_website/samsclub_scraper.py
         # Append this products
         # Commas need to be removed so there aren't
         #   extra columns created in the .csv file
@@ -58,12 +54,21 @@ def getProducts(url):
                 linkLine + "\n" +
                 priceLine + "\n" +
                 imageLine + "\n")
+=======
+        # Write this product's data to output.csv
+        file.write("<a href=\"" + productLink + "\">" + productName.replace(";","") + "</a>;"
+                    + productPrice + ";<img src=\"" + productImage + "\">\n")
+>>>>>>> a73acd4f1d16d218b948f44a41c1fc45b00a03d3:flask_website/samsclub_scraper.py
 
     # Close the output file
     file.close()
 
 def searchForProducts(query):
+<<<<<<< HEAD:flask_website/samsclub_scraper.py
     getProducts('http://www.samsclub.com/s/' + query.replace(' ', '%20'))
 
 def removeCommas(str):
     return str.replace(',', ' ')
+=======
+    getProducts('http://www.samsclub.com/s/' + query.replace(' ', '%20'))
+>>>>>>> a73acd4f1d16d218b948f44a41c1fc45b00a03d3:flask_website/samsclub_scraper.py
