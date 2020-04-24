@@ -10,6 +10,8 @@ MPA COVID-19 Hackathon. This webscraper pulls information from large retail site
 ## Videos on how to run our website:
 * [How to install Dependencies](https://www.youtube.com/watch?v=Sl7gPp7oRxE)
 
+* [How to run the website](https://www.youtube.com/watch?v=-UjONrs_r5k)
+
 ## Dependencies for Local Machines
 * [Python](https://www.python.org/)
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/)
