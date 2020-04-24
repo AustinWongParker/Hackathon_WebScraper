@@ -50,5 +50,3 @@ def getProducts(url):
 
 def wal_searchForProducts(query):     
   getProducts('https://www.walmart.com/search/?query=' + query.replace(' ', '%20'))
-
-wal_searchForProducts('toilet paper')
