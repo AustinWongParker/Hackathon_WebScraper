@@ -17,10 +17,17 @@ This means it supports most of the methods described in Navigating the tree and 
 
 def priceWithFulfillment(): # Parses prices for class=product-price-with-fulfillment
     prices = []
-    for divss in soup.find_all('span', {'class': 'price display-inline-block arrange-fit price price-main'}):
-         spans = divss.find('span', {'class': 'price-group'})
-         if spans is not None:
-             prices.append(spans.text)
+    # for divss in soup.find_all('span', {'class': 'price display-inline-block arrange-fit price price-main'}):
+    #      spans = divss.find('span', {'class': 'price-group'})
+    for divvs in soup.find_all('div', {'class': 'product-price-with-fulfillment'}):
+        if divvs is not None:
+            divss = divvs.find('span', {'class': 'price display-inline-block arrange-fit price price-main'})
+            if divss is not None:
+                spans = divss.find('span', {'class': 'visuallyhidden'})
+                if spans is not None:
+                    prices.append(spans.text)
+                else:
+                    prices.append('');
     print(prices)
     return prices
 
@@ -41,9 +48,15 @@ def grab_image():
 
 def grab_name():
     names = []
-    for dives in soup.find_all('div', {'class': 'product-title-link line-clamp line-clamp-2'}):
-        spanss = dives.find('span')
-        names.append(spanss.text)
+    for grids in soup.find_all('div', {'class': 'search-result-gridview-item-wrapper'}):
+        # dives = grids.find('a', {'class': 'product-title-link line-clamp line-clamp-2'})
+        dives = grids.find('div', {'class': 'search-result-product-title gridview'})
+        ives = dives.find('a', {'class': 'product-title-link line-clamp line-clamp-2 truncate-title'})
+        if ives is not None:
+            spanss = ives.find('span')
+            names.append(spanss.text)
+        else:
+            names.append(' ');
     print(names)
 
 ####using the functions
@@ -64,7 +77,7 @@ soup = BeautifulSoup(src, 'lxml')
 priceWithFulfillment()
 print('\n')
 #grab_image()
-#grab_name()
+grab_name()
 
 
 print('----------------Soap-------------------')
@@ -74,5 +87,5 @@ soup = BeautifulSoup(src, 'lxml')
 priceWithFulfillment()
 print('\n')
 #grab_image()
-#grab_name()
-#grab_image()
+grab_name()
+# grab_image()

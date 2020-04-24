@@ -1,6 +1,8 @@
+<!-- Frontend for hackathon - HTML / CSS - This is the main page that is inherited to other htmls -->
+
 <!DOCTYPE html>
 <html>
-<title>Essential Covid19 Items</title>
+<title>Corona Essentials</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,11 +32,13 @@ form {
     <a href="walmart" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">Walmart</a>
     <a href="about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">About</a>
 
-    <!-- Search bar (still in Navbar tag)-->
-    <form class="navbar-form navbar-left" action="/action_page.php">
+    <!-- Search bar (still in Navbar div tag)--> <!-- Form/input routing information: https://stackoverflow.com/questions/11556958/sending-data-from-html-form-to-a-python-script-in-flask-->
+    <form class="navbar-form navbar-left" action="{{ url_for('searched_result') }}" method="post">
+
       <div class="form-group w3-right-align" style="margin-right: 10px">
         <li>
-   <input type="text" class="form-control w3-right-align" placeholder="Search Sam's Club" name="Search Sam's Club" style="margin-left: 5px">
+   <input type="text" class="form-control w3-right-align" placeholder="Search Sam's Club" name="searched_result" style="margin-left: 5px">
+   <input type="submit" value="Enter" style="width:60px;"/>
    </li>
     </div>
       </form>
@@ -64,8 +68,8 @@ form {
 <!-- End Page Content -->
 </div>
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">
-</footer>
+<!--<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">
+</footer>-->
 
 
 </body>

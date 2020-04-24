@@ -1,8 +1,7 @@
-# Front-end for hackathon
-# flask python
+# Backend for hackathon - routing via Flask Python
 
-from flask import Flask, render_template, redirect, url_for
 import sys
+from flask import Flask, render_template, redirect, url_for, request
 from samsclub_scraper import *
 from csv_to_html import *
 app = Flask(__name__) # app is an instance of the flask class.
@@ -55,12 +54,13 @@ def wal_handsanitizer():
     return render_template('wal_handsanitizer.html')
 # *** End: Walmart Routing *** #
 
-'''
 # Search bar results #
-@app.route('searched_result')
-def searched_result('/searched_result')
+@app.route('/searched_result', methods=['POST']) #+searched_string
+def searched_result():
+    sc_searchForProducts(request.form['searched_result'])
+    convertFile("output.csv", "templates/table.html")
     return render_template('sc_searched_result.html')
-'''
+
 
 # About page routing
 @app.route('/about')
