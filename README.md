@@ -4,7 +4,7 @@ MPA COVID-19 Hackathon. This webscraper pulls information from large retail site
 1. First, install all the dependencies below. You'll need all of them for the application to work. 
 2. Choose a location to cd into. C:\Users\user\Documents\ is where I placed mine. Clone the repo into there.
 3. cd into Hackathon_WebScraper --> flask_website. At this point, you should see all our files such as \_\__init\_\__.py, samsclub_scraper,   walmart_scraper, etc.
-4. While inside the Hackathon_WebScraper/flask_website directory, you can type in your cmd 'python \_\__init\_\__.py' (no quotes) and this will run the website. If you're having trouble, try python3 and make sure all dependencies are installed.
+4. While inside the Hackathon_WebScraper/flask_website directory, you can type in your command prompt 'python \_\__init\_\__.py' (no quotes) and this will run the website. If you're having trouble, try python3 and make sure all dependencies are installed.
 5. That should be it :) You'll be able to use and navigate our site. I hope you enjoy it! Please refer to our video if you have troubles.
 
 ## Videos on how to run our website:
