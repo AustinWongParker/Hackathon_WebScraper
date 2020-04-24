@@ -1,3 +1,17 @@
+Deployment Information
+----------------------
+4/24/2020
+~~~~~~~~~
+After reviewing options for deployment, we tried Linode linux servers and Heroku cloud services.
+Both didn't work completely how we wanted it to. Linode gave us routing errors for our Tp | soap | hand Sanitizer.
+Heroku was able to deploy. You can see it here: https://hackathon-webscraper.herokuapp.com/ HOWEVER, the routing for the
+tp | soap | hand Sanitizer is messed up. We spent numerous hours trying to deploy it online, though the routing of our flask application did not allow for it.
+In conclusion, we did NOT deploy on the web. You'll have to run the flask application locally to view all our changes. This will produce the best results :)
+
+
+Old | Misc Information Below
+---------------------------
+
 Website IP: 23.239.14.146
 Website URL: http://coronaessentials.info/
 
