@@ -37,19 +37,19 @@ def wal_home():
 
 @app.route('/wal_tp')
 def wal_tp():
-    sc_searchForProducts("Toilet Paper") # Need to change to walmart. Will leave as SC for now
+    wal_searchForProducts("Toilet Paper") # Need to change to walmart. Will leave as SC for now
     convertFile("output.csv", "templates/table.html")
     return render_template('wal_tp.html')
 
 @app.route('/wal_soap')
 def wal_soap():
-    sc_searchForProducts("Soap") # Need to change to walmart. Will leave as SC for now
+    wal_searchForProducts("Soap") # Need to change to walmart. Will leave as SC for now
     convertFile("output.csv", "templates/table.html")
     return render_template('wal_soap.html')
 
 @app.route('/wal_handsanitizer')
 def wal_handsanitizer():
-    sc_searchForProducts("Hand Sanitizer") # Need to change to walmart. Will leave as SC for now
+    wal_searchForProducts("Hand Sanitizer") # Need to change to walmart. Will leave as SC for now
     convertFile("output.csv", "templates/table.html")
     return render_template('wal_handsanitizer.html')
 # *** End: Walmart Routing *** #
