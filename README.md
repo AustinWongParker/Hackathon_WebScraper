@@ -8,7 +8,8 @@ MPA COVID-19 Hackathon. This webscraper pulls information from large retail site
 5. That should be it :) You'll be able to use and navigate our site. I hope you enjoy it! Please refer to our video if you have troubles.
 
 ## Dependencies for Local Machines
-* [Python](https://www.python.org/) | [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [Python](https://www.python.org/)
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 * [Beautiful Soup 4](https://www.crummy.com/software/BeautifulSoup/)
 * [Requests](https://pypi.org/project/requests/)
 * [lxml](https://lxml.de/)
