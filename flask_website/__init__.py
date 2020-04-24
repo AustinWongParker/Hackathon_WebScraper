@@ -3,6 +3,7 @@
 import sys
 from flask import Flask, render_template, redirect, url_for, request
 from samsclub_scraper import *
+from walmart_scraper import *
 from csv_to_html import *
 app = Flask(__name__) # app is an instance of the flask class.
 
